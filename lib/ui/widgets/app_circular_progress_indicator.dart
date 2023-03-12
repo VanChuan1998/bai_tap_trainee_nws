@@ -13,12 +13,12 @@ class AppCircularProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: SizedBox(
+      child: const SizedBox(
         width: 24,
         height: 24,
         child: CircularProgressIndicator(
-          backgroundColor: color,
-          valueColor: const AlwaysStoppedAnimation<Color>(AppColors.secondary),
+          backgroundColor: Colors.white,
+          valueColor: AlwaysStoppedAnimation<Color>(AppColors.secondary),
         ),
       ),
     );

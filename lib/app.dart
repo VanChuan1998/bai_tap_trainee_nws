@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'blocs/app_cubit.dart';
 import 'blocs/setting/app_setting_cubit.dart';
 import 'common/app_themes.dart';
+import 'database/share_preferences_helper.dart';
 import 'generated/l10n.dart';
 import 'network/api_client.dart';
 import 'network/api_util.dart';
@@ -15,6 +16,9 @@ import 'repositories/auth_repository.dart';
 import 'repositories/movie_repository.dart';
 import 'repositories/user_repository.dart';
 import 'router/route_config.dart';
+
+
+final ValueNotifier<ThemeMode> notifier = ValueNotifier(ThemeMode.system);
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -31,6 +35,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     _apiClient = ApiUtil.apiClient;
+    _setThemeDefault();
     super.initState();
   }
 
@@ -105,6 +110,11 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+
+  void _setThemeDefault() async {
+    notifier.value = ThemeMode.dark;
+  }
+
 
   void _hideKeyboard(BuildContext context) {
     FocusScopeNode currentFocus = FocusScope.of(context);

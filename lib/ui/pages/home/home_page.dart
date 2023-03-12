@@ -43,34 +43,18 @@ class _HomePageState extends State<HomePage>
           // avatarUrl: authService.user.value?.avatarUrl ?? "",
           ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(AppDimens.paddingNormal),
-              child: AppTabBar(
-                tabController: _tapBarController,
-                tabItems: const [
-                  "Trending",
-                  "Upcoming",
-                ],
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              AppButton(
+                title: "Bài tập chương 3",
+                onPressed: (){
+                  Get.toNamed(RouteConfig.chap3);
+                },
               ),
-            ),
-            Expanded(
-              child: TabBarView(
-                controller: _tapBarController,
-                children: [
-                  _buildTrendingMovies(),
-                  _buildUpcomingMovies(),
-                ],
-              ),
-            ),
-            AppButton(
-              title: "Bài tập chương 3",
-              onPressed: (){
-                Get.toNamed(RouteConfig.chap3);
-              },
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
