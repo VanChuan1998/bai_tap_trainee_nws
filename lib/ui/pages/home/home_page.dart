@@ -49,7 +49,14 @@ class _HomePageState extends State<HomePage>
             children: [
               AppButton(
                 title: "Bài tập chương 3",
-                onPressed: (){
+                onPressed: () {
+                  Get.toNamed(RouteConfig.chap3);
+                },
+              ),
+              const SizedBox(height: 8),
+              AppButton(
+                title: "Bài tập chương 4",
+                onPressed: () {
                   Get.toNamed(RouteConfig.chap3);
                 },
               ),
