@@ -15,7 +15,6 @@ class YoutubePlayerArguments {
 }
 
 class YoutubePlayerPage extends StatelessWidget {
-
   const YoutubePlayerPage({
     Key? key,
   }) : super(key: key);
@@ -44,7 +43,6 @@ class _YoutubePlayerChildPageState extends State<YoutubePlayerChildPage> {
   late TextEditingController _idController;
   late TextEditingController _seekToController;
 
-
   late YoutubePlayerController _youtubeController;
   late PlayerState _playerState;
   late YoutubeMetaData _videoMetaData;
@@ -68,8 +66,7 @@ class _YoutubePlayerChildPageState extends State<YoutubePlayerChildPage> {
         forceHD: false,
         enableCaption: true,
       ),
-    )
-      ..addListener(listener);
+    )..addListener(listener);
     _videoMetaData = const YoutubeMetaData();
     _playerState = PlayerState.unknown;
 
@@ -104,7 +101,6 @@ class _YoutubePlayerChildPageState extends State<YoutubePlayerChildPage> {
       player: YoutubePlayer(
         controller: _youtubeController,
         showVideoProgressIndicator: true,
-        progressIndicatorColor: Colors.blueAccent,
         topActions: <Widget>[
           const SizedBox(width: 8.0),
           Expanded(
@@ -131,6 +127,9 @@ class _YoutubePlayerChildPageState extends State<YoutubePlayerChildPage> {
         ],
         onReady: () {
           _isPlayerReady = true;
+        },
+        onEnded: (data) {
+          _youtubeController.reload();
         },
       ),
       builder: (context, player) => Scaffold(
@@ -228,18 +227,18 @@ class _YoutubePlayerChildPageState extends State<YoutubePlayerChildPage> {
         color: Colors.blueAccent,
         onPressed: _isPlayerReady
             ? () {
-          if (_idController.text.isNotEmpty) {
-            var id = YoutubePlayer.convertUrlToId(
-              _idController.text,
-            ) ??
-                '';
-            if (action == 'LOAD') _youtubeController.load(id);
-            if (action == 'CUE') _youtubeController.cue(id);
-            FocusScope.of(context).requestFocus(FocusNode());
-          } else {
-            _showSnackBar('Source can\'t be empty!');
-          }
-        }
+                if (_idController.text.isNotEmpty) {
+                  var id = YoutubePlayer.convertUrlToId(
+                        _idController.text,
+                      ) ??
+                      '';
+                  if (action == 'LOAD') _youtubeController.load(id);
+                  if (action == 'CUE') _youtubeController.cue(id);
+                  FocusScope.of(context).requestFocus(FocusNode());
+                } else {
+                  _showSnackBar('Source can\'t be empty!');
+                }
+              }
             : null,
         disabledColor: Colors.grey,
         disabledTextColor: Colors.black,
