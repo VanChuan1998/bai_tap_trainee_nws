@@ -1,9 +1,7 @@
 import 'package:bai_tap_trainee/router/route_config.dart';
 import 'package:bai_tap_trainee/ui/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
-import 'package:bai_tap_trainee/common/app_dimens.dart';
 import 'package:bai_tap_trainee/models/enums/movie_category.dart';
-import 'package:bai_tap_trainee/ui/widgets/tabs/app_tab_bar.dart';
 import 'package:get/get.dart';
 
 import 'movies/movies_page.dart';
@@ -32,6 +30,7 @@ class _HomePageState extends State<HomePage>
   @override
   void dispose() {
     super.dispose();
+    _tapBarController.dispose();
   }
 
   @override
@@ -57,7 +56,7 @@ class _HomePageState extends State<HomePage>
               AppButton(
                 title: "Bài tập chương 4",
                 onPressed: () {
-                  Get.toNamed(RouteConfig.chap3);
+                  Get.toNamed(RouteConfig.chap4);
                 },
               ),
             ],

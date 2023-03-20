@@ -10,4 +10,8 @@ class AppImages {
   static const icEyeOpen = 'assets/images/ic_eye_open.png';
 
   static const imgDemo = 'assets/images/img_demo.png';
+
+  static const imgFaq = 'assets/images/img_faq.png';
+  static const imgGroup = 'assets/images/img_group.png';
+  static const imgTerms = 'assets/images/img_terms.png';
 }

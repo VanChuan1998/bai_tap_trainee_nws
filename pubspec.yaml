@@ -46,6 +46,12 @@ dependencies:
   shared_preferences: ^2.0.5
   path_provider: ^2.0.10
 
+  flutter_svg: ^1.1.6
+
+  #video
+  video_player: ^2.6.0
+  youtube_player_flutter: ^8.1.2
+
   #Network
   retrofit: ^3.0.1
   dio: ^4.0.0
@@ -102,6 +108,7 @@ flutter:
     - assets/images/ic_eye_open.png
     - assets/images/ic_eye_open.png
     - assets/images/
+    - assets/vectors/
 
   fonts:
     - family: Arimo

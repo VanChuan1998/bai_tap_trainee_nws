@@ -2,10 +2,10 @@ import 'package:bai_tap_trainee/models/enums/load_status.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
-part 'chap_4_state.dart';
+part 'youtube_player_state.dart';
 
-class Chap4Cubit extends Cubit<Chap4State> {
-  Chap4Cubit() : super(const Chap4State());
+class YoutubePlayerCubit extends Cubit<YoutubePlayerState> {
+  YoutubePlayerCubit() : super(const YoutubePlayerState());
 
   Future<void> loadInitialData() async {
     emit(state.copyWith(loadDataStatus: LoadStatus.initial));
@@ -16,9 +16,5 @@ class Chap4Cubit extends Cubit<Chap4State> {
       //Todo: should print exception here
       emit(state.copyWith(loadDataStatus: LoadStatus.failure));
     }
-  }
-
-  Future<void> changeSvgPicture() async {
-    emit(state.copyWith(isShowSvg: !state.isShowSvg));
   }
 }

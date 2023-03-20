@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import 'blocs/app_cubit.dart';
 import 'blocs/setting/app_setting_cubit.dart';
 import 'common/app_themes.dart';
-import 'database/share_preferences_helper.dart';
 import 'generated/l10n.dart';
 import 'network/api_client.dart';
 import 'network/api_util.dart';
