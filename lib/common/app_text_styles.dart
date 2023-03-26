@@ -31,9 +31,19 @@ class AppTextStyle {
   static final blackS22Bold = blackS22.copyWith(fontWeight: FontWeight.bold);
   static final blackS22W800 = blackS22.copyWith(fontWeight: FontWeight.w800);
 
-
   ///White
   static const white = TextStyle(color: Colors.white);
+
+  //s9
+  static final whiteS8 = white.copyWith(fontSize: 8);
+  static final whiteS8W500 = whiteS8.copyWith(fontWeight: FontWeight.w500);
+  static final whiteS8Bold = whiteS8.copyWith(fontWeight: FontWeight.bold);
+  static final whiteS8W800 = whiteS8.copyWith(fontWeight: FontWeight.w800);
+
+  //s9
+  static final whiteS9 = white.copyWith(fontSize: 9);
+  static final whiteS9Bold = whiteS9.copyWith(fontWeight: FontWeight.bold);
+  static final whiteS9W800 = whiteS9.copyWith(fontWeight: FontWeight.w800);
 
   //s12
   static final whiteS12 = white.copyWith(fontSize: 12);
@@ -45,6 +55,12 @@ class AppTextStyle {
   static final whiteS14Bold = whiteS14.copyWith(fontWeight: FontWeight.bold);
   static final whiteS14W800 = whiteS14.copyWith(fontWeight: FontWeight.w800);
 
+  //s15
+  static final whiteS15 = white.copyWith(fontSize: 15);
+  static final whiteS15W500 = whiteS15.copyWith(fontWeight: FontWeight.w500);
+  static final whiteS15Bold = whiteS15.copyWith(fontWeight: FontWeight.bold);
+  static final whiteS15W800 = whiteS15.copyWith(fontWeight: FontWeight.w800);
+
   //s16
   static final whiteS16 = white.copyWith(fontSize: 16);
   static final whiteS16Bold = whiteS16.copyWith(fontWeight: FontWeight.bold);
@@ -54,6 +70,16 @@ class AppTextStyle {
   static final whiteS18 = white.copyWith(fontSize: 18);
   static final whiteS18Bold = whiteS18.copyWith(fontWeight: FontWeight.bold);
   static final whiteS18W800 = whiteS18.copyWith(fontWeight: FontWeight.w800);
+
+  //s30
+  static final whiteS30 = white.copyWith(fontSize: 30);
+  static final whiteS30Bold = whiteS30.copyWith(fontWeight: FontWeight.bold);
+  static final whiteS30W800 = whiteS30.copyWith(fontWeight: FontWeight.w800);
+
+  //s64
+  static final whiteS64 = white.copyWith(fontSize: 64);
+  static final whiteS64Bold = whiteS64.copyWith(fontWeight: FontWeight.bold);
+  static final whiteS64W800 = whiteS64.copyWith(fontWeight: FontWeight.w800);
 
   ///Gray
   static const grey = TextStyle(color: Colors.grey);

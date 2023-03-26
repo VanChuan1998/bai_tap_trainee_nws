@@ -23,8 +23,8 @@ class AppCacheImage extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isValidUrl = Uri.tryParse(url)?.isAbsolute == true;
     return Container(
-      width: width ?? double.infinity,
-      height: height ?? double.infinity,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         color: Colors.grey,
         borderRadius: BorderRadius.circular(borderRadius ?? 0),

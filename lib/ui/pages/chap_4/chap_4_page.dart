@@ -1,5 +1,5 @@
 import 'package:bai_tap_trainee/common/app_images.dart';
-import 'package:bai_tap_trainee/common/app_vector.dart';
+import 'package:bai_tap_trainee/common/app_vectors.dart';
 import 'package:bai_tap_trainee/router/route_config.dart';
 import 'package:bai_tap_trainee/ui/widgets/buttons/app_button.dart';
 import 'package:bai_tap_trainee/ui/widgets/images/app_circle_avatar.dart';

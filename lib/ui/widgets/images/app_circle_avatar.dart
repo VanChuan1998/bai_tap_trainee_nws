@@ -16,8 +16,8 @@ class AppCircleAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isValidUrl = Uri.tryParse(url)?.isAbsolute == true;
     return Container(
-      width: size ?? double.infinity,
-      height: size ?? double.infinity,
+      width: size,
+      height: size,
       decoration: BoxDecoration(
         color: Colors.grey,
         borderRadius: BorderRadius.circular((size ?? 0) / 2),
