@@ -16,6 +16,22 @@ class MovieEntity {
   String? overview;
   @JsonKey(name: 'release_date')
   String? releaseDate;
+  @JsonKey(name: 'adult')
+  bool? adult;
+  @JsonKey(name: 'genre_ids')
+  List<num>? genreIds;
+  @JsonKey(name: 'id')
+  int? id;
+  @JsonKey(name: 'original_language')
+  String? originalLanguage;
+  @JsonKey(name: 'original_title')
+  String? originalTitle;
+  @JsonKey(name: 'popularity')
+  num? popularity;
+  @JsonKey(name: 'video')
+  bool? video;
+  @JsonKey(name: 'vote_count')
+  int? voteCount;
 
   MovieEntity({
     this.title,
@@ -24,6 +40,14 @@ class MovieEntity {
     this.voteAverage,
     this.overview,
     this.releaseDate,
+    this.adult,
+    this.genreIds,
+    this.id,
+    this.originalLanguage,
+    this.originalTitle,
+    this.popularity,
+    this.video,
+    this.voteCount,
   });
 
   factory MovieEntity.fromJson(Map<String, dynamic> json) =>
@@ -31,7 +55,6 @@ class MovieEntity {
 
   Map<String, dynamic> toJson() => _$MovieEntityToJson(this);
 
-  @JsonKey(ignore: true)
   String get posterUrl {
     return 'https://image.tmdb.org/t/p/w185${posterPath ?? ""}';
   }

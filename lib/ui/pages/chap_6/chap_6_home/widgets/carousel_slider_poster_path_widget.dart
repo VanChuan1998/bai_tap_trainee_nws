@@ -36,7 +36,7 @@ class CarouselSliderPosterPathWidget extends StatelessWidget {
                 );
               },
               child: AppCacheImage(
-                url: item.posterPath ?? '',
+                url: item.posterUrl ?? '',
                 fit: BoxFit.cover,
                 borderRadius: 16,
                 height: 215,

@@ -3,6 +3,7 @@ import 'package:bai_tap_trainee/ui/pages/chap_4/chap_4_page.dart';
 import 'package:bai_tap_trainee/ui/pages/chap_4/youtube_player/youtube_player_page.dart';
 import 'package:bai_tap_trainee/ui/pages/chap_5/chap_5_detail/chap_5_detail_page.dart';
 import 'package:bai_tap_trainee/ui/pages/chap_5/chap_5_page.dart';
+import 'package:bai_tap_trainee/ui/pages/chap_6/chap_6_page.dart';
 import 'package:bai_tap_trainee/ui/pages/sign_in/sign_in_page.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +20,7 @@ class RouteConfig {
   static const String chap3 = "/chap3";
   static const String chap4 = "/chap4";
   static const String chap5 = "/chap5";
+  static const String chap6 = "/chap6";
   static const String youtubePlayerPage = "/youtubePlayerPage";
   static const String chap5Detail = "/chap5Detail";
 
@@ -30,6 +32,7 @@ class RouteConfig {
     GetPage(name: chap3, page: () => const Chap3Page()),
     GetPage(name: chap4, page: () => const Chap4Page()),
     GetPage(name: chap5, page: () => const Chap5Page()),
+    GetPage(name: chap6, page: () => const Chap6Page()),
     GetPage(name: youtubePlayerPage, page: () => const YoutubePlayerPage()),
     GetPage(
         name: chap5Detail,

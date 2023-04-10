@@ -8,13 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-class CarouselSliderPosterPathWidget extends StatelessWidget {
+class CarouselSliderBackdropPathWidget extends StatelessWidget {
   final List<MovieEntity> movies;
   final CarouselController controller;
   final Function(int, CarouselPageChangedReason)? onPageChange;
   final int currentPage;
 
-  const CarouselSliderPosterPathWidget({
+  const CarouselSliderBackdropPathWidget({
     Key? key,
     required this.movies,
     required this.controller,
@@ -29,18 +29,39 @@ class CarouselSliderPosterPathWidget extends StatelessWidget {
               onTap: () {
                 PersistentNavBarNavigator.pushNewScreen(
                   context,
-                  screen: Chap5DetailPage(
-                      arguments: Chap5DetailArguments(movie: item)),
+                  screen: Chap5DetailPage(arguments: Chap5DetailArguments(movie: item)),
                   withNavBar: true, // OPTIONAL VALUE. True by default.
                   pageTransitionAnimation: PageTransitionAnimation.cupertino,
                 );
+
               },
-              child: AppCacheImage(
-                url: item.posterPath ?? '',
-                fit: BoxFit.cover,
-                borderRadius: 16,
-                height: 215,
-                width: 145,
+              child: Stack(
+                children: <Widget>[
+                  AppCacheImage(
+                    url: item.posterUrl ?? '',
+                    fit: BoxFit.cover,
+                    borderRadius: 16,
+                    height: 141,
+                    width: 1000,
+                  ),
+                  Positioned(
+                    bottom: 0.0,
+                    left: 0.0,
+                    right: 0.0,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 20.0),
+                      child: Text(
+                        item.title ?? '',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ))
         .toList();
@@ -50,9 +71,9 @@ class CarouselSliderPosterPathWidget extends StatelessWidget {
             carouselController: controller,
             items: imageSliders,
             options: CarouselOptions(
-              height: 215,
-              aspectRatio: 1,
-              viewportFraction: 0.5,
+              height: 141,
+              aspectRatio: 16 / 9,
+              viewportFraction: 0.8,
               initialPage: 0,
               enableInfiniteScroll: true,
               reverse: false,
@@ -60,7 +81,7 @@ class CarouselSliderPosterPathWidget extends StatelessWidget {
               autoPlayInterval: const Duration(seconds: 3),
               autoPlayAnimationDuration: const Duration(milliseconds: 1000),
               autoPlayCurve: Curves.fastOutSlowIn,
-              enlargeCenterPage: false,
+              enlargeCenterPage: true,
               enlargeFactor: 0.3,
               scrollDirection: Axis.horizontal,
               onPageChanged: onPageChange,
